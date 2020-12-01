@@ -26,6 +26,8 @@ RUN apt -qq update && apt -qq upgrade -y \
   # Remove unused packages
   && apt autoremove -y 
 
+RUN docker-php-ext-install calendar
+
 # Copy artifacts
 COPY ./artifacts/${ARTIFACT_DIR}/ /tmp
 
